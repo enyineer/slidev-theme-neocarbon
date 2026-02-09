@@ -87,10 +87,6 @@ defineProps<{
 .nc-icon-emoji {
   font-size: 16px;
   line-height: 1;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
   font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif !important;
 }
 
