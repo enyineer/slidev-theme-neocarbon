@@ -1,0 +1,58 @@
+{
+  "name": "slidev-theme-neocarbon",
+  "version": "1.0.1",
+  "description": "A premium dark Slidev theme with cinematic animations, glass morphism, and animated data visualizations. Inspired by high-fidelity corporate pitch decks.",
+  "author": "Nico Enking",
+  "license": "MIT",
+  "homepage": "https://github.com/enyineer/slidev-theme-neocarbon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enyineer/slidev-theme-neocarbon"
+  },
+  "keywords": [
+    "slidev-theme",
+    "slidev",
+    "dark",
+    "premium",
+    "corporate",
+    "presentation",
+    "neocarbon",
+    "glassmorphism",
+    "animations"
+  ],
+  "engines": {
+    "slidev": ">=0.48.0"
+  },
+  "slidev": {
+    "colorSchema": "dark",
+    "defaults": {
+      "transition": "fade",
+      "mdc": true,
+      "fonts": {
+        "sans": "Inter",
+        "mono": "Fira Code"
+      }
+    }
+  },
+  "main": "styles/index.ts",
+  "files": [
+    "components/",
+    "layouts/",
+    "styles/",
+    "global-top.vue",
+    "global-bottom.vue"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "vue": "^3.5.27"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.11.5"
+  },
+  "scripts": {
+    "dev": "slidev --open"
+  }
+}

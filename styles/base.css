@@ -1,0 +1,529 @@
+/*
+ * NeοCarbon — Slidev Theme
+ * A premium dark theme with cinematic animations and glassmorphism.
+ *
+ * All colors are driven by CSS custom properties so consumers
+ * can re-skin the theme with a single CSS override.
+ */
+
+/* ===== Design Tokens ===== */
+:root {
+  /* -- Brand accent (override for your own colour) -- */
+  --nc-accent: #E30613;
+  --nc-accent-rgb: 227, 6, 19;
+
+  /* -- Surfaces -- */
+  --nc-bg: #0c0c0c;
+  --nc-surface: #161616;
+  --nc-border: rgba(255, 255, 255, 0.06);
+
+  /* -- Text -- */
+  --nc-text: #f0f0f0;
+  --nc-text-muted: rgba(255, 255, 255, 0.45);
+  --nc-text-dim: rgba(255, 255, 255, 0.25);
+
+  /* -- Semantic -- */
+  --nc-success: #4ade80;
+  --nc-success-rgb: 74, 222, 128;
+  --nc-warning: #fbbf24;
+  --nc-warning-rgb: 251, 191, 36;
+  --nc-danger: #ea580c;
+  --nc-danger-rgb: 234, 88, 12;
+  --nc-info: #60a5fa;
+  --nc-info-rgb: 96, 165, 250;
+
+  /* -- Typography -- */
+  --nc-font: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* -- Slidev overrides -- */
+  --slidev-slide-container-background: var(--nc-bg) !important;
+  --slidev-theme-primary: var(--nc-accent) !important;
+  --slidev-controls-foreground: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ===== Global Resets ===== */
+html,
+html.dark,
+html.light {
+  --slidev-slide-container-background: var(--nc-bg) !important;
+  color-scheme: dark !important;
+}
+
+html,
+body,
+#app,
+#app>div {
+  background: var(--nc-bg) !important;
+  background-color: var(--nc-bg) !important;
+}
+
+* {
+  font-family: var(--nc-font) !important;
+}
+
+/* ===== SLIDE LAYOUT ===== */
+.slidev-layout {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--nc-text) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.slidev-page .slidev-layout {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+/* Auto-flex for content divs — custom layouts can opt out */
+.slidev-layout:not(.nc-custom-layout)>div {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.slidev-layout>.my-auto {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  flex: 1;
+}
+
+/* ===== STAGGERED ENTRANCE TRANSITIONS ===== */
+/* Controlled by .nc-stagger-active class toggled via global-top.vue */
+.slidev-layout:not(.nc-custom-layout)>div>* {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(4px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slidev-layout.nc-stagger-active:not(.nc-custom-layout)>div>* {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.slidev-layout.nc-stagger-active:not(.nc-custom-layout)>div>*:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.slidev-layout.nc-stagger-active:not(.nc-custom-layout)>div>*:nth-child(2) {
+  transition-delay: 0.12s;
+}
+
+.slidev-layout.nc-stagger-active:not(.nc-custom-layout)>div>*:nth-child(3) {
+  transition-delay: 0.19s;
+}
+
+.slidev-layout.nc-stagger-active:not(.nc-custom-layout)>div>*:nth-child(4) {
+  transition-delay: 0.26s;
+}
+
+.slidev-layout.nc-stagger-active:not(.nc-custom-layout)>div>*:nth-child(5) {
+  transition-delay: 0.33s;
+}
+
+.slidev-layout.nc-stagger-active:not(.nc-custom-layout)>div>*:nth-child(6) {
+  transition-delay: 0.40s;
+}
+
+.slidev-layout.nc-stagger-active:not(.nc-custom-layout)>div>*:nth-child(7) {
+  transition-delay: 0.47s;
+}
+
+.slidev-layout.nc-stagger-active:not(.nc-custom-layout)>div>*:nth-child(8) {
+  transition-delay: 0.54s;
+}
+
+/* ===== HEADINGS ===== */
+.slidev-layout h1 {
+  color: white !important;
+  font-weight: 700 !important;
+  -webkit-text-fill-color: white !important;
+  background: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  font-size: 1.5rem !important;
+  letter-spacing: -0.01em;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  line-height: 1.3 !important;
+}
+
+.slidev-layout h1+p {
+  opacity: 1 !important;
+  margin-top: 0 !important;
+}
+
+.slidev-layout h3 {
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+}
+
+.slidev-layout p,
+.slidev-layout li {
+  color: var(--nc-text) !important;
+}
+
+/* ===== ACCENT LABEL ===== */
+.nc-label {
+  color: var(--nc-accent) !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ===== ICON BADGES ===== */
+.nc-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 12px;
+  background: var(--nc-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(var(--nc-accent-rgb), 0.3);
+  animation: nc-icon-pulse 4s ease-in-out infinite;
+}
+
+@keyframes nc-icon-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 15px rgba(var(--nc-accent-rgb), 0.3);
+  }
+
+  50% {
+    box-shadow: 0 4px 25px rgba(var(--nc-accent-rgb), 0.5), 0 0 40px rgba(var(--nc-accent-rgb), 0.15);
+  }
+}
+
+.nc-icon svg {
+  color: white !important;
+}
+
+.nc-icon-sm {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 8px;
+  background: var(--nc-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(var(--nc-accent-rgb), 0.25);
+}
+
+.nc-icon-sm svg {
+  color: white !important;
+}
+
+/* ===== CARDS ===== */
+.nc-card {
+  background: var(--nc-surface) !important;
+  border: 1px solid var(--nc-border);
+  border-radius: 14px;
+  padding: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.nc-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(var(--nc-accent-rgb), 0.15);
+  box-shadow: 0 4px 20px rgba(var(--nc-accent-rgb), 0.08), 0 0 40px rgba(var(--nc-accent-rgb), 0.04);
+}
+
+/* ===== GLASS ===== */
+.nc-glass {
+  background: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+/* ===== HIGHLIGHT ===== */
+.nc-highlight {
+  background: linear-gradient(135deg, rgba(var(--nc-accent-rgb), 0.12), rgba(var(--nc-accent-rgb), 0.04)) !important;
+  border: 1px solid rgba(var(--nc-accent-rgb), 0.2);
+  border-radius: 14px;
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nc-highlight::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(115deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.03) 45%,
+      rgba(255, 255, 255, 0.06) 50%,
+      rgba(255, 255, 255, 0.03) 55%,
+      transparent 60%);
+  animation: nc-shimmer 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes nc-shimmer {
+
+  0%,
+  100% {
+    transform: translateX(-100%) rotate(0deg);
+  }
+
+  50% {
+    transform: translateX(100%) rotate(0deg);
+  }
+}
+
+/* ===== METRIC CARDS ===== */
+.nc-metric {
+  background: var(--nc-surface) !important;
+  border: 1px solid var(--nc-border);
+  border-radius: 14px;
+  padding: 10px 14px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nc-metric:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== TABLE ===== */
+.slidev-layout table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  background: var(--nc-surface) !important;
+}
+
+.slidev-layout th {
+  background: var(--nc-accent) !important;
+  color: white !important;
+  padding: 8px 12px !important;
+  font-size: 0.7rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700 !important;
+  border: none !important;
+}
+
+.slidev-layout td {
+  padding: 6px 12px !important;
+  border-bottom: 1px solid var(--nc-border) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  font-size: 0.72rem !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  background: transparent !important;
+}
+
+.slidev-layout tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+.slidev-layout tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* ===== PROGRESS BAR ===== */
+.slidev-progress {
+  background: rgba(255, 255, 255, 0.06) !important;
+  height: 3px !important;
+}
+
+.slidev-progress-bar {
+  background: linear-gradient(90deg, var(--nc-accent), #ff4433) !important;
+  box-shadow: 0 0 12px rgba(var(--nc-accent-rgb), 0.6), 0 0 30px rgba(var(--nc-accent-rgb), 0.2);
+  transition: width 0.4s ease !important;
+}
+
+/* ===== UTILITY TEXT ===== */
+.nc-text-accent {
+  color: var(--nc-accent) !important;
+}
+
+.nc-text-success {
+  color: var(--nc-success) !important;
+}
+
+.nc-text-warning {
+  color: var(--nc-warning) !important;
+}
+
+.nc-text-danger {
+  color: var(--nc-danger) !important;
+}
+
+.nc-text-info {
+  color: var(--nc-info) !important;
+}
+
+.nc-text-muted {
+  color: var(--nc-text-muted) !important;
+}
+
+.nc-text-dim {
+  color: var(--nc-text-dim) !important;
+}
+
+/* ===== MERMAID DIAGRAMS ===== */
+.mermaid {
+  display: flex;
+  justify-content: center;
+}
+
+.mermaid svg {
+  max-width: 100%;
+}
+
+/* Dark-theme overrides for Mermaid */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node polygon,
+.mermaid .node ellipse {
+  fill: var(--nc-surface) !important;
+  stroke: rgba(var(--nc-accent-rgb), 0.35) !important;
+  stroke-width: 1.5px !important;
+  rx: 8 !important;
+  ry: 8 !important;
+}
+
+.mermaid .nodeLabel,
+.mermaid .label,
+.mermaid text {
+  fill: rgba(255, 255, 255, 0.85) !important;
+  font-family: var(--nc-font) !important;
+  font-size: 12px !important;
+}
+
+.mermaid .edgePath path {
+  stroke: rgba(var(--nc-accent-rgb), 0.4) !important;
+  stroke-width: 1.5px !important;
+}
+
+.mermaid .arrowheadPath {
+  fill: rgba(var(--nc-accent-rgb), 0.5) !important;
+}
+
+.mermaid .edgeLabel {
+  background-color: var(--nc-bg) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 10px !important;
+}
+
+.mermaid .cluster rect {
+  fill: rgba(255, 255, 255, 0.02) !important;
+  stroke: rgba(255, 255, 255, 0.08) !important;
+  rx: 12 !important;
+  ry: 12 !important;
+}
+
+.mermaid .cluster text {
+  fill: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ===== KATEX MATH ===== */
+.katex-display {
+  margin: 1rem 0 !important;
+}
+
+.katex {
+  color: white !important;
+}
+
+.katex .base {
+  color: white;
+}
+
+/* ===== CODE BLOCKS (Shiki / Monaco) ===== */
+.slidev-layout pre,
+.slidev-layout .slidev-code-wrapper {
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.slidev-layout pre code {
+  font-family: 'Fira Code', 'SF Mono', 'Cascadia Code', monospace !important;
+  font-size: 0.78rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Monaco editor dark styling */
+.slidev-monaco {
+  border-radius: 12px !important;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+/* ===== SHOWCASE GRID ===== */
+.nc-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.nc-showcase-item {
+  background: var(--nc-surface);
+  border: 1px solid var(--nc-border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.nc-showcase-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(var(--nc-accent-rgb), 0.2);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.nc-showcase-item img {
+  width: 100%;
+  display: block;
+}
+
+.nc-showcase-item p {
+  padding: 8px 12px;
+  font-size: 0.7rem !important;
+  font-weight: 600;
+  color: white !important;
+  text-align: center;
+}
+
+/* ===== PRINT / PDF EXPORT ===== */
+@media print {
+
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .nc-glass {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+  }
+}
