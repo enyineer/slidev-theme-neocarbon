@@ -11,13 +11,13 @@
 -->
 <script setup lang="ts">
 defineProps<{
-  icon?: string
-  title: string
-  description?: string
-  color?: string
-  highlighted?: boolean
-  small?: boolean
-}>()
+  icon?: string;
+  title: string;
+  description?: string;
+  color?: string;
+  highlighted?: boolean;
+  small?: boolean;
+}>();
 </script>
 
 <template>
@@ -25,7 +25,9 @@ defineProps<{
     <div
       v-if="icon || $slots.icon"
       :class="small ? 'nc-icon-sm' : 'nc-icon'"
-      :style="color ? { background: color, boxShadow: `0 4px 15px ${color}40` } : {}"
+      :style="
+        color ? { background: color, boxShadow: `0 4px 15px ${color}40` } : {}
+      "
     >
       <slot name="icon">
         <span class="nc-icon-emoji">{{ icon }}</span>
@@ -48,7 +50,10 @@ defineProps<{
   border-radius: 14px;
   background: var(--nc-surface, #161616);
   border: 1px solid var(--nc-border, rgba(255, 255, 255, 0.06));
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .nc-icon-card:hover {
@@ -58,7 +63,11 @@ defineProps<{
 }
 
 .nc-icon-card-highlight {
-  background: linear-gradient(135deg, rgba(var(--nc-accent-rgb, 227, 6, 19), 0.1), rgba(var(--nc-accent-rgb, 227, 6, 19), 0.03)) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--nc-accent-rgb, 227, 6, 19), 0.1),
+    rgba(var(--nc-accent-rgb, 227, 6, 19), 0.03)
+  ) !important;
   border-color: rgba(var(--nc-accent-rgb, 227, 6, 19), 0.2);
 }
 
@@ -78,6 +87,11 @@ defineProps<{
 .nc-icon-emoji {
   font-size: 16px;
   line-height: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nc-icon :deep(svg) {
