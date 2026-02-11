@@ -114,7 +114,7 @@ defineProps<{
 
 .nc-roi-source {
   font-size: 0.52rem !important;
-  color: rgba(255, 255, 255, 0.35) !important;
+  color: var(--nc-text-muted) !important;
   margin-top: 4px;
   line-height: 1.4;
 }
@@ -136,7 +136,7 @@ defineProps<{
 
 .nc-roi-metric-label {
   font-size: 0.62rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--nc-text-muted);
 }
 
 .nc-roi-metric-value {
@@ -156,7 +156,7 @@ defineProps<{
 .nc-roi-prefix {
   font-size: 0.7rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--nc-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }

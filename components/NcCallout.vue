@@ -91,7 +91,7 @@ const colorMap: Record<string, string> = {
 
 .nc-callout-content {
   font-size: 0.68rem !important;
-  color: rgba(255, 255, 255, 0.55) !important;
+  color: var(--nc-text-muted) !important;
   line-height: 1.5;
 }
 

@@ -79,7 +79,7 @@ defineProps<{
 
 .nc-icon-card-desc {
   font-size: 0.65rem !important;
-  color: rgba(255, 255, 255, 0.4) !important;
+  color: var(--nc-text-muted) !important;
   margin-top: 2px;
   line-height: 1.5;
 }
@@ -87,7 +87,8 @@ defineProps<{
 .nc-icon-emoji {
   font-size: 16px;
   line-height: 1;
-  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif !important;
+  font-family:
+    "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
 }
 
 .nc-icon :deep(svg) {

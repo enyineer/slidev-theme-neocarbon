@@ -147,7 +147,7 @@ onMounted(() => { setTimeout(() => { visible.value = true }, 200) })
 
 .nc-step-desc {
   font-size: 0.62rem !important;
-  color: rgba(255, 255, 255, 0.35) !important;
+  color: var(--nc-text-muted) !important;
   margin-top: 1px;
 }
 </style>

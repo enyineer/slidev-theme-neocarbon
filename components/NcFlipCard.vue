@@ -15,13 +15,16 @@
 -->
 <script setup lang="ts">
 defineProps<{
-  width?: string
-  height?: string
-}>()
+  width?: string;
+  height?: string;
+}>();
 </script>
 
 <template>
-  <div class="nc-flip" :style="{ width: width || '180px', height: height || '200px' }">
+  <div
+    class="nc-flip"
+    :style="{ width: width || '180px', height: height || '200px' }"
+  >
     <div class="nc-flip-inner">
       <div class="nc-flip-front">
         <slot name="front" />
@@ -86,7 +89,7 @@ defineProps<{
 .nc-flip-front :deep(p),
 .nc-flip-back :deep(p) {
   font-size: 0.65rem !important;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--nc-text-muted) !important;
 }
 
 .nc-flip-back :deep(p) {
