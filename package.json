@@ -53,6 +53,9 @@
     "@slidev/cli": "^52.11.5"
   },
   "scripts": {
-    "dev": "slidev --open"
+    "dev": "slidev --open",
+    "publish:patch": "npm version patch && npm publish --access public",
+    "publish:minor": "npm version minor && npm publish --access public",
+    "publish:major": "npm version major && npm publish --access public"
   }
 }
