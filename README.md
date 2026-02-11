@@ -14,6 +14,66 @@ A **premium dark Slidev theme** with cinematic animations, glassmorphism, and an
 - 📊 **Mermaid / KaTeX / Monaco** — First-class dark-theme styling for all Slidev features
 - 📄 **PDF-ready** — Print styles with `print-color-adjust: exact`
 
+## Slide Examples
+
+<table>
+<tr>
+<td><img src="examples/0.png" width="400" /></td>
+<td><img src="examples/1.png" width="400" /></td>
+<td><img src="examples/2.png" width="400" /></td>
+</tr>
+<tr>
+<td><img src="examples/3.png" width="400" /></td>
+<td><img src="examples/4.png" width="400" /></td>
+<td><img src="examples/5.png" width="400" /></td>
+</tr>
+<tr>
+<td><img src="examples/6.png" width="400" /></td>
+<td><img src="examples/7.png" width="400" /></td>
+<td><img src="examples/8.png" width="400" /></td>
+</tr>
+<tr>
+<td><img src="examples/9.png" width="400" /></td>
+<td><img src="examples/10.png" width="400" /></td>
+<td><img src="examples/11.png" width="400" /></td>
+</tr>
+<tr>
+<td><img src="examples/12.png" width="400" /></td>
+<td><img src="examples/13.png" width="400" /></td>
+<td><img src="examples/14.png" width="400" /></td>
+</tr>
+<tr>
+<td><img src="examples/15.png" width="400" /></td>
+<td><img src="examples/16.png" width="400" /></td>
+<td><img src="examples/17.png" width="400" /></td>
+</tr>
+<tr>
+<td><img src="examples/18.png" width="400" /></td>
+<td><img src="examples/19.png" width="400" /></td>
+<td><img src="examples/20.png" width="400" /></td>
+</tr>
+<tr>
+<td><img src="examples/21.png" width="400" /></td>
+<td><img src="examples/22.png" width="400" /></td>
+<td><img src="examples/23.png" width="400" /></td>
+</tr>
+<tr>
+<td><img src="examples/24.png" width="400" /></td>
+<td><img src="examples/25.png" width="400" /></td>
+<td><img src="examples/26.png" width="400" /></td>
+</tr>
+<tr>
+<td><img src="examples/27.png" width="400" /></td>
+<td><img src="examples/28.png" width="400" /></td>
+<td><img src="examples/29.png" width="400" /></td>
+</tr>
+<tr>
+<td><img src="examples/30.png" width="400" /></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+
 ## Installation
 
 ```bash
@@ -855,7 +915,7 @@ Pure SVG spider/radar chart (no Chart.js needed).
 | `nc-text-warning` | Amber (`--nc-warning`) |
 | `nc-text-danger` | Orange-red (`--nc-danger`) |
 | `nc-text-info` | Blue (`--nc-info`) |
-| `nc-text-muted` | 45% white |
+| `nc-text-muted` | 60% white |
 | `nc-text-dim` | 25% white |
 
 ### Other
