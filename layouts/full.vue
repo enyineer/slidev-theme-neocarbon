@@ -10,7 +10,7 @@
     <img src="/hero.jpg" class="w-full h-full object-cover" />
 -->
 <template>
-  <div class="slidev-layout nc-full">
+  <div class="slidev-layout nc-full nc-custom-layout">
     <slot />
   </div>
 </template>

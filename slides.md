@@ -26,7 +26,7 @@ mdc: true
   </p>
 
   <p style="color: rgba(255,255,255,0.2) !important; font-size: 0.7rem; margin-top: 2.5rem;">
-    slidev-theme-neocarbon · v1.0.0
+    @enyineer/slidev-theme-neocarbon · v1.0.6
   </p>
 </div>
 
@@ -618,5 +618,5 @@ layout: end
 
 Built with ❤️ using Slidev + NeoCarbon
 
-slidev-theme-neocarbon · MIT License
+@enyineer/slidev-theme-neocarbon · MIT License
 

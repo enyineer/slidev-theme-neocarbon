@@ -1,6 +1,6 @@
 # slidev-theme-neocarbon
 
-[![NPM version](https://img.shields.io/npm/v/slidev-theme-neocarbon?color=E30613)](https://www.npmjs.com/package/slidev-theme-neocarbon)
+[![NPM version](https://img.shields.io/npm/v/@enyineer/slidev-theme-neocarbon?color=E30613)](https://www.npmjs.com/package/@enyineer/slidev-theme-neocarbon)
 
 A **premium dark Slidev theme** with cinematic animations, glassmorphism, and animated data visualizations. Built for high-fidelity corporate pitch decks, tech talks, and product showcases.
 
@@ -77,14 +77,14 @@ A **premium dark Slidev theme** with cinematic animations, glassmorphism, and an
 ## Installation
 
 ```bash
-npm i slidev-theme-neocarbon
+npm i @enyineer/slidev-theme-neocarbon
 ```
 
 In your `slides.md` frontmatter:
 
 ```yaml
 ---
-theme: slidev-theme-neocarbon
+theme: @enyineer/slidev-theme-neocarbon
 ---
 ```
 
